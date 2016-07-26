@@ -1,0 +1,81 @@
+{
+  "project": {
+    "projectSettingsVersion": "3.0.0",
+    "initialAutoPluginCount": 0,
+    "currentBuildConfiguration": null,
+    "projectFiles": {},
+    "projectDirectories": {}
+  },
+  "editorTab": {
+    "currentEditorMode": 0
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "LocalTemperature.xdk": {
+        "previousModTime": 1468930843921,
+        "modified": 1468930843921,
+        "seen": true,
+        "name": "LocalTemperature.xdk"
+      },
+      "LocalTemperature.xdke": {
+        "previousModTime": 1469496630889,
+        "modified": 1469496630889,
+        "seen": true,
+        "name": "LocalTemperature.xdke"
+      },
+      "README.md": {
+        "previousModTime": 1431984312000,
+        "modified": 1431984312000,
+        "seen": true,
+        "name": "README.md"
+      },
+      "app.json": {
+        "previousModTime": 1431984312000,
+        "modified": 1431984312000,
+        "seen": true,
+        "name": "app.json"
+      },
+      "icon.png": {
+        "previousModTime": 1431984312000,
+        "modified": 1431984312000,
+        "seen": true,
+        "name": "icon.png"
+      },
+      "main.js": {
+        "previousModTime": 1469496721396,
+        "modified": 1469496721396,
+        "seen": true,
+        "name": "main.js"
+      },
+      "package.json": {
+        "previousModTime": 1431984312000,
+        "modified": 1431984312000,
+        "seen": true,
+        "name": "package.json"
+      },
+      "xdk-publish-meta-data.json": {
+        "previousModTime": 1468930611607,
+        "modified": 1468930611607,
+        "seen": true,
+        "name": "xdk-publish-meta-data.json"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1468930611036,
+        "modified": 1468930611036,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      },
+      "lcd.js": {
+        "previousModTime": 1469243847272,
+        "modified": 1469243847272,
+        "seen": true,
+        "name": "lcd.js"
+      }
+    },
+    "boardFileStatus": {
+      "main.js": {
+        "previousModTime": 1469496732483
+      }
+    }
+  }
+}

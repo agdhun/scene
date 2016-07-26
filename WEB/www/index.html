@@ -1,0 +1,105 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+    <head data-noxhrfix>
+	<title>智能场景IOT</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<style type="text/css">
+		/* Prevent copy paste for all elements except text fields */
+		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+		input, textarea  { -webkit-user-select:text; }
+		body { background-color:white; color:black }
+	</style>
+    <!--  jQuery  -->
+    <script src="lib/jquery/jquery-2.1.1.js"></script>
+    <!--  App Framework  -->
+    <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css"></link>
+    <script type="text/javascript" src="lib/appframework/jq.appframework.min.js"></script>
+    <script type="text/javascript" src="lib/appframework/appframework.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/appframework/appframework.ui.min.js"></script>
+    
+    <script src="lib/d3/d3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    
+    <script src='xhr.js'></script>
+    <script type="text/javascript">
+        var onDeviceReady=function(){                             // called when Cordova is ready
+           if( window.Cordova && navigator.splashscreen ) {     // Cordova API detected
+                navigator.splashscreen.hide() ;                 // hide splash screen
+            }
+        } ;
+        document.addEventListener("deviceready", onDeviceReady, false) ;
+    </script>
+</head>
+<body onload="">
+
+	<div id="afui">
+        
+        <div id="content">
+            
+            <!-- 场景列表-->
+            <div id="scene_list" title="场景列表" class="panel" >
+                <div id="scenelist"  class="list">
+
+                </div>
+                <div id=""  class="list">
+                    <li><a onclick="create_scene()">新建场景</a></li>
+                </div>                    
+            </div>
+
+            <!-- 新建场景-->
+            <div id="create_scene" class="panel" title="新建场景" data-footer="none">
+                <div style="text-align:center">
+                    场景名称：<input type="text" id="scene_name" style="width:50%"/>
+                    <div id="tasklist"  class="list">
+                        
+                    </div>  
+                    <a class="block button" href="#create_task" >添加新任务</a>
+                    <a class="block button" onclick="clear_task()">不保存场景</a>
+                    <a class="block button" onclick="save_scene()">保存场景</a>
+                </div>
+            </div>
+        
+            <!--添加新任务-->
+            <div id="create_task" class="panel" title="新建任务" data-footer="none">
+                <select name="select" id="select_k1">
+                    <option value="lightoff">关灯</option>
+                    <option value="lighton">开灯</option>
+                    <option value="curon">窗帘打开</option>
+                    <option value="curoff">窗帘关闭</option>
+                    <option value="airon">空调开启，同时开启制冷模式</option>
+                    <option value="airoff">空调关闭</option>
+                    <option value="cookeron">开启电饭煲</option>
+                    <option value="cookeroff">关闭电饭煲</option>
+                </select>
+                请输入几秒后执行：<input type="number" style="width:50%" min="0" id="num"/>秒
+                <a class="block button" onclick="save_task()" >添加</a>
+                <a class="block button" href="#create_scene" >返回</a>
+            </div>            
+            
+            <div id="show_scene" class="panel"  data-footer="none">   
+                <!--场景名称<div id="scene"></div>-->
+                    <div id="tlist"  class="list">
+                        
+                    </div>  
+                    <a class="block button" onclick="submit()">执行</a>
+                    <a class="block button" href="#scene_list">返回</a>
+                </div>
+            </div>
+
+            <div class="panel" data-title="智能场景IOT" modal="true"  selected="true">
+                <p>请提供IP地址和端口用以连接你的开发平台上的智能场景IOT项目</p>
+                <em>注意：<em>这是建立你的APP和NodeIoT应用连接所必须。
+                <input id="ip_address" type="text" placeholder="输入你的IoT开发平台的IP地址">
+                <input id="port" type="text" placeholder="输入响应端口号">
+                <a class="block button" onclick="validateIP()">连接</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/store.min.js"></script>
+
+</html>
